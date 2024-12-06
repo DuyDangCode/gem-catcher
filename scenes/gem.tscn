@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ouinhl85ebt5"]
+
+[ext_resource type="Texture2D" uid="uid://dge4dv4yh6616" path="res://assets/element_red_diamond.png" id="1_0goww"]
+[ext_resource type="Script" path="res://scenes/Gem.cs" id="1_33bxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxtms"]
+size = Vector2(30.1122, 30.6777)
+
+[node name="Gem" type="Area2D"]
+scale = Vector2(1, 1.21)
+script = ExtResource("1_33bxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, 0)
+texture = ExtResource("1_0goww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.826447)
+rotation = -0.799361
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dxtms")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
